@@ -1,0 +1,1 @@
+D:\Course\Google_Test\GTest\TestMath\x64\Debug\TestMath.vcxproj.CopyComplete
