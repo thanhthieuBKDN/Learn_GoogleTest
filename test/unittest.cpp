@@ -1,5 +1,6 @@
 #include "math.h"
 #include <gtest/gtest.h>
+#include "mockPhanSo.h"
 
 class MyMathTest : public ::testing::Test {
     protected:

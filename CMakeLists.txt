@@ -14,16 +14,14 @@ endif()
 add_executable(Run  
     ${CMAKE_CURRENT_SOURCE_DIR}/test/unittest.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/math.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/math.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/phanso.cpp
 )
 add_subdirectory(googletest)
-target_link_libraries(Run gtest gtest_main)
+target_link_libraries(Run 
+    gtest 
+    gtest_main
+    gmock
+)
 include(CTest)
 enable_testing()
-
-# coverage
-add_custom_target(coverage
-    COMMAND lcov --capture --directory . --output-file coverage.info
-    COMMAND lcov --remove coverage.info '/usr/*' '*/googletest/*' --output-file coverage_filtered.info
-    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-    COMMENT "Generating test coverage report..."
-)
