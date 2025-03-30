@@ -1,9 +1,9 @@
 #include <gmock/gmock.h>
 #include "phanso.h"
+#include "math.h"
 
-class MockPhanSo : public BasePhanSo {
+class MockPhanSo : public PhanSo {
 public:
-    MOCK_METHOD(void, nhap, (const int &a, const int &b), (override));
     MOCK_METHOD(int, getTu, (), (override));
     MOCK_METHOD(int, getMau, (), (override));
 };

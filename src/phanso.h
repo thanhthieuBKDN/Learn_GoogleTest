@@ -7,8 +7,8 @@ class BasePhanSo {
         BasePhanSo() = default;
         virtual ~BasePhanSo() = default;
         virtual void nhap(const int &a, const int &b) {};
-        virtual int getTu()  {};
-        virtual int getMau() {};
+        virtual int getTu()  {return 0;};
+        virtual int getMau() {return 0;};
 };
 
 class PhanSo : public BasePhanSo {
@@ -20,12 +20,13 @@ class PhanSo : public BasePhanSo {
                 m_mau = 1;
             }
         };
-        ~PhanSo() = default;
+        virtual ~PhanSo() = default;
         void nhap(const int &a, const int &b) override;
-        int getTu() override;
-        int getMau() override;
+        virtual int getTu() override;
+        virtual int getMau() override;
     private:
         int m_tu;
         int m_mau;
 };
+
 #endif
